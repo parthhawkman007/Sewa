@@ -1,0 +1,35 @@
+.card {
+  padding: 1.2rem;
+  border-radius: var(--radius-xl);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.card p,
+.card span {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.card strong {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 1.8rem;
+}
+
+.iconWrap {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.9rem;
+  display: grid;
+  place-items: center;
+  background: rgba(79, 70, 229, 0.18);
+}

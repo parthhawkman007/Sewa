@@ -1,0 +1,75 @@
+.page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* 🔥 Card styling for clean UI */
+.sectionCard {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* 🔥 Fix uneven spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔥 Center everything properly */
+.centeredCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* spacing between donut & legend */
+  width: 100%;
+}
+
+/* 🔥 Perfect square wrapper */
+.donutWrapper {
+  height: 160px;
+  width: 160px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔥 Force chart to stay centered */
+.donutWrapper canvas,
+.donutWrapper svg {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* 🔥 Legend fix (VERY IMPORTANT for uneven issue) */
+.chartLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start; /* clean left alignment */
+  width: 100%;
+  max-width: 180px;
+}
+
+/* 🔥 Individual legend item */
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 🔥 Color box */
+.legendColor {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+/* Optional: title alignment fix */
+.sectionTitle {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1rem;
+}

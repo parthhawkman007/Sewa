@@ -1,0 +1,80 @@
+.page {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.heroCard,
+.statCard,
+.shiftCard {
+  padding: 1.2rem;
+  border-radius: var(--radius-xl);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.heroCard {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.helper,
+.statCard span,
+.shiftCard span,
+.shiftCard p,
+.shiftCard small {
+  color: var(--text-muted);
+}
+
+.statusButton {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.statCard strong,
+.statCard span {
+  display: block;
+}
+
+.statCard strong {
+  margin: 0.7rem 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+.shiftGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.shiftCard {
+  text-align: left;
+  background: var(--surface-elevated);
+}
+
+.shiftCard strong,
+.shiftCard span,
+.shiftCard p,
+.shiftCard small {
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.active {
+  border-color: rgba(79, 70, 229, 0.42);
+  background: rgba(79, 70, 229, 0.12);
+}
+
+@media (max-width: 900px) {
+  .heroCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .shiftGrid {
+    grid-template-columns: 1fr;
+  }
+}

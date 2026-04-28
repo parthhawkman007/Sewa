@@ -1,0 +1,43 @@
+.card {
+  padding: 1.2rem;
+  border-radius: var(--radius-xl);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.header h3 {
+  margin-top: 0;
+}
+
+.list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 0.75rem 1fr auto;
+  gap: 0.85rem;
+  align-items: start;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.item p,
+.item span {
+  margin: 0.25rem 0 0;
+  color: var(--text-muted);
+}
+
+.marker {
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}

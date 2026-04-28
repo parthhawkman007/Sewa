@@ -1,0 +1,39 @@
+.page {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.statCard,
+.tableCard {
+  padding: 1.2rem;
+  border-radius: var(--radius-xl);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.statCard strong,
+.statCard span {
+  display: block;
+}
+
+.statCard strong {
+  margin: 0.7rem 0 0.25rem;
+  font-size: 1.55rem;
+}
+
+.statCard span {
+  color: var(--text-muted);
+}
+
+.tableCard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableCard th,
+.tableCard td {
+  text-align: left;
+  padding: 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+}

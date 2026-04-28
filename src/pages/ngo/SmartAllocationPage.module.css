@@ -1,0 +1,101 @@
+.page {
+  display: grid;
+  gap: 1rem;
+}
+
+.comparisonCard,
+.card {
+  padding: 1.2rem;
+  border-radius: var(--radius-xl);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.issueHeader,
+.rankRow,
+.metrics {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.issueHeader p,
+.rankRow p {
+  color: var(--text-muted);
+}
+
+.rankingList {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.compareList {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.compareRow {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--surface-elevated);
+}
+
+.compareHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.compareBarTrack {
+  height: 0.7rem;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.16);
+  overflow: hidden;
+}
+
+.compareBarFill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.rankRow {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--surface-elevated);
+  align-items: center;
+}
+
+.metrics {
+  align-items: center;
+}
+
+.helperText,
+.compareRow small {
+  color: var(--text-muted);
+}
+
+.selected {
+  border-color: rgba(79, 70, 229, 0.34);
+}
+
+.assignmentState {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  background: rgba(20, 184, 166, 0.12);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 880px) {
+  .issueHeader,
+  .rankRow,
+  .metrics {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

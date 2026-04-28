@@ -1,0 +1,85 @@
+.page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.matchBoard {
+  display: grid;
+}
+
+.panel {
+  padding: 1.2rem;
+  border-radius: var(--radius-xl);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.taskRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.taskRow:last-child {
+  border-bottom: 0;
+}
+
+.taskRow p {
+  color: var(--text-muted);
+  margin: 0.25rem 0 0;
+}
+
+.skillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.skillChip {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(79, 70, 229, 0.16);
+}
+
+.capacityGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.capacityGrid article {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--surface-elevated);
+}
+
+.capacityGrid span {
+  color: var(--text-muted);
+}
+
+.capacityGrid strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.5rem;
+}
+
+.queueBanner {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(20, 184, 166, 0.12);
+}
+
+.queueBanner strong,
+.queueBanner span {
+  display: block;
+}
+
+.queueBanner span {
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}

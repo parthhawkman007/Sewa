@@ -1,0 +1,162 @@
+import asyncio
+import json
+import os
+from app.db.repository import get_repository, FirestoreRepository, JSONRepository
+from app.core.config import get_settings
+
+# Seed data based on apiClient.js mock database
+SEED_DATA = {
+    "issues": [
+        {
+            "id": "ISS-1024",
+            "title": "Flooded underpass blocking school buses",
+            "description": "Water logging is preventing transport access near the east corridor.",
+            "category": "Flood Relief",
+            "urgency": 92,
+            "priority": "High",
+            "status": "Open",
+            "emergency": True,
+            "reportedBy": "Aarav Sharma",
+            "locationName": "East Corridor",
+            "location": {"lat": 28.6139, "lng": 77.209, "label": "East Corridor"},
+            "coordinates": {"x": 24, "y": 48},
+            "distanceKm": 4.0,
+            "requiredSkills": ["Field Ops", "Logistics"],
+            "mediaUrls": ["flooded-underpass.jpg"],
+            "createdAt": "2026-04-16 07:15",
+            "updates": [
+                {"label": "Reported", "time": "07:15"},
+                {"label": "Validated by district desk", "time": "07:19"},
+                {"label": "Awaiting volunteer dispatch", "time": "07:22"},
+            ],
+        },
+        {
+            "id": "ISS-1025",
+            "title": "Community kitchen needs medicine pickup",
+            "description": "A senior shelter requires urgent medicine delivery support.",
+            "category": "Medical Support",
+            "urgency": 81,
+            "priority": "High",
+            "status": "In Progress",
+            "emergency": False,
+            "reportedBy": "Rhea Menon",
+            "locationName": "Riverfront Ward",
+            "location": {"lat": 28.5355, "lng": 77.391, "label": "Riverfront Ward"},
+            "coordinates": {"x": 62, "y": 36},
+            "distanceKm": 7.0,
+            "requiredSkills": ["Medical Support", "Driving"],
+            "mediaUrls": [],
+            "createdAt": "2026-04-16 06:40",
+            "updates": [
+                {"label": "Reported", "time": "06:40"},
+                {"label": "Accepted by volunteer", "time": "06:50"},
+                {"label": "Transit started", "time": "07:02"},
+            ],
+        }
+    ],
+    "volunteers": [
+        {
+            "id": "VOL-201",
+            "name": "Maya Patel",
+            "skills": ["First Aid", "Logistics", "Field Ops"],
+            "distanceKm": 5.0,
+            "availability": "Online",
+            "tasksCompleted": 38,
+            "reliability": 95,
+            "rating": 4.8,
+            "responseTime": "3.4 min"
+        },
+        {
+            "id": "VOL-202",
+            "name": "Arjun Das",
+            "skills": ["Driving", "Medical Support", "Logistics"],
+            "distanceKm": 8.0,
+            "availability": "Online",
+            "tasksCompleted": 29,
+            "reliability": 88,
+            "rating": 4.7,
+            "responseTime": "4.1 min"
+        }
+    ],
+    "tasks": [
+        {
+            "id": "TSK-401",
+            "issueId": "ISS-1025",
+            "volunteerId": "VOL-202",
+            "status": "accepted",
+            "startTime": "2026-04-16 06:50",
+            "completionTime": None,
+            "routeEta": "12 min",
+            "reminderAt": "2026-04-16 07:20"
+        }
+    ],
+    "notifications": [
+        {
+            "id": 1,
+            "title": "Allocation update",
+            "message": "Top volunteers recalculated for 3 high-priority issues.",
+            "type": "success",
+            "read": False,
+            "createdAt": "09:05",
+            "role": "ngo"
+        }
+    ],
+    "chat_threads": [
+        {
+            "id": "CHAT-1",
+            "participants": ["user", "volunteer"],
+            "title": "Issue ISS-1025 coordination",
+            "messages": [
+                {"id": "MSG-1", "senderRole": "user", "senderName": "Rhea Menon", "text": "The medicines are urgently needed before lunch.", "time": "09:02"},
+                {"id": "MSG-2", "senderRole": "volunteer", "senderName": "Arjun Das", "text": "I have accepted the route and I am leaving now.", "time": "09:05"}
+            ]
+        }
+    ],
+    "users": [
+        {
+            "id": "USR-101",
+            "name": "Aarav Sharma",
+            "role": "user",
+            "email": "aarav@civicgrid.org",
+            "location": "East Corridor",
+            "trustScore": 94
+        },
+        {
+            "id": "VOL-201",
+            "name": "Maya Patel",
+            "role": "volunteer",
+            "email": "maya@communitylink.org",
+            "skills": ["First Aid", "Logistics", "Field Ops"],
+            "maxDistance": 15.0,
+            "rating": 4.8
+        },
+        {
+            "id": "NGO-301",
+            "name": "Nina Joseph",
+            "role": "ngo",
+            "email": "nina@hopeworks.org",
+            "organization": "HopeWorks Foundation",
+            "organizationType": "NGO Admin"
+        }
+    ]
+}
+
+async def seed():
+    repo = get_repository()
+    
+    print(f"Using repository: {type(repo).__name__}")
+    
+    for collection, items in SEED_DATA.items():
+        print(f"Seeding collection: {collection}...")
+        for item in items:
+            existing = await repo.get_by_id(collection, item["id"])
+            if not existing:
+                await repo.create(collection, item)
+                print(f"  Created {item['id']}")
+            else:
+                print(f"  Item {item['id']} already exists")
+    
+    print("Seeding complete!")
+
+if __name__ == "__main__":
+    asyncio.run(seed())

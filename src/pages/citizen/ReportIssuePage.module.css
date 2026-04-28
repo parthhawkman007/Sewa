@@ -1,0 +1,151 @@
+.formCard,
+.previewCard {
+  padding: 1.25rem;
+  border-radius: var(--radius-xl);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.formCard {
+  display: grid;
+  gap: 1rem;
+}
+
+.stepper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.stepButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.stepButton span {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.18);
+}
+
+.stepActive {
+  background: rgba(79, 70, 229, 0.14);
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.checkboxRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.checkboxRow input {
+  width: auto;
+  margin: 0;
+}
+
+.locationGrid,
+.mediaActions,
+.footerRow,
+.summary {
+  display: grid;
+  gap: 1rem;
+}
+
+.locationGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mediaActions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mediaActions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.mediaPreviewGrid,
+.reviewCard {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.mediaCard,
+.reviewCard article,
+.summary article,
+.receipt,
+.payloadPreview,
+.emptyState,
+.errorState {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--surface-elevated);
+}
+
+.mediaCard strong,
+.mediaCard span {
+  display: block;
+  margin-top: 0.35rem;
+}
+
+.mediaCard span,
+.reviewCard span,
+.summary span,
+.summary p,
+.receipt span,
+.emptyState,
+.errorState {
+  color: var(--text-muted);
+}
+
+.summary article {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.summary p {
+  margin: 0.2rem 0 0;
+}
+
+.payloadPreview {
+  overflow: auto;
+  white-space: pre-wrap;
+  font-size: 0.86rem;
+}
+
+.receipt {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.footerRow {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.errorState {
+  background: rgba(239, 68, 68, 0.12);
+}
+
+@media (max-width: 860px) {
+  .locationGrid,
+  .mediaActions,
+  .mediaPreviewGrid,
+  .reviewCard,
+  .footerRow {
+    grid-template-columns: 1fr;
+  }
+}

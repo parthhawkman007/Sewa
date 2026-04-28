@@ -1,0 +1,57 @@
+.page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.activityCard {
+  padding: 1.2rem;
+  border-radius: var(--radius-xl);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.issueRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.issueRow:last-child {
+  border-bottom: 0;
+}
+
+.issueRow p {
+  margin: 0.3rem 0 0;
+  color: var(--text-muted);
+}
+
+.empty {
+  color: var(--text-muted);
+  padding: 1rem 0.3rem;
+}
+
+.forecastGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.forecastGrid article {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--surface-elevated);
+}
+
+.forecastGrid span,
+.forecastGrid p {
+  color: var(--text-muted);
+}
+
+.forecastGrid strong {
+  display: block;
+  margin: 0.45rem 0;
+  font-size: 1.5rem;
+}

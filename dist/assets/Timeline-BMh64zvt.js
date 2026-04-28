@@ -1,0 +1,1 @@
+import{j as e}from"./index-BE4tGBkf.js";const o="_timeline_ire90_1",l="_step_ire90_6",r="_dot_ire90_13",s={timeline:o,step:l,dot:r};function m({items:i}){return e.jsx("div",{className:s.timeline,children:i.map((t,n)=>e.jsxs("div",{className:s.step,children:[e.jsx("span",{className:s.dot}),e.jsx("p",{children:t})]},`${t}-${n}`))})}export{m as T};

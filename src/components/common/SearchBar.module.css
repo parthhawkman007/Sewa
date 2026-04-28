@@ -1,0 +1,37 @@
+.wrapper {
+  position: relative;
+  min-width: min(360px, 100%);
+}
+
+.wrapper input {
+  width: 100%;
+  padding-left: 2.35rem;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 0.85rem;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.results {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  width: 100%;
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.results a {
+  display: block;
+  padding: 0.85rem 1rem;
+}
+
+.results a:hover {
+  background: var(--surface-elevated);
+}

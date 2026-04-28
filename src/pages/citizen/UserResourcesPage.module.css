@@ -1,0 +1,45 @@
+.page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.quickCard,
+.resourcePanel {
+  padding: 1.2rem;
+  border-radius: var(--radius-xl);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.quickCard strong,
+.quickCard span {
+  display: block;
+}
+
+.quickCard strong {
+  margin: 0.7rem 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+.quickCard span,
+.resourceCard p,
+.resourceCard small {
+  color: var(--text-muted);
+}
+
+.resourceList {
+  display: grid;
+  gap: 1rem;
+}
+
+.resourceCard {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--surface-elevated);
+}
+
+.resourceCard span {
+  display: inline-flex;
+  margin: 0.6rem 0;
+}

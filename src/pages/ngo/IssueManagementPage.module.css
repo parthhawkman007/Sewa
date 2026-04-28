@@ -1,0 +1,71 @@
+.page {
+  display: grid;
+  gap: 1rem;
+}
+
+.switcher {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.switcher button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.active {
+  background: var(--primary);
+  color: white;
+}
+
+.tableCard,
+.column {
+  padding: 1.2rem;
+  border-radius: var(--radius-xl);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.tableCard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableCard th,
+.tableCard td {
+  padding: 0.85rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.actionCell,
+.quickActions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.kanban {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.kanbanCard {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--surface-elevated);
+  margin-top: 1rem;
+}
+
+.kanbanCard p {
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .kanban {
+    grid-template-columns: 1fr;
+  }
+}

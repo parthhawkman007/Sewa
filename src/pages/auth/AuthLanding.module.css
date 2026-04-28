@@ -1,0 +1,93 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at top left, rgba(79, 70, 229, 0.22), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(20, 184, 166, 0.18), transparent 32%),
+    var(--bg-primary);
+}
+
+.hero {
+  width: min(1200px, 100%);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.copy {
+  padding: 2rem;
+}
+
+.copy h1 {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 0.98;
+  margin-bottom: 1rem;
+}
+
+.copy p:last-child {
+  color: var(--text-secondary);
+  max-width: 42rem;
+  font-size: 1.05rem;
+}
+
+.panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.rolePicker,
+.form {
+  padding: 1.25rem;
+  border-radius: 1.75rem;
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.rolePicker {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.roleButton {
+  display: grid;
+  grid-template-columns: 1.25rem 1fr;
+  gap: 0.8rem;
+  align-items: start;
+  text-align: left;
+}
+
+.roleButton span,
+.formHeader p {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--text-muted);
+}
+
+.active {
+  border-color: rgba(79, 70, 229, 0.4);
+  background: rgba(79, 70, 229, 0.12);
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.formHeader {
+  display: flex;
+  gap: 0.8rem;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .copy {
+    padding: 1rem;
+  }
+}
