@@ -1,0 +1,21 @@
+# Dependencies and build output
+node_modules/
+dist/
+backend/.venv/
+__pycache__/
+*.py[cod]
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+*firebase-adminsdk*.json
+*service-account*.json
+service-account.json
+
+# Local Firebase/Google state
+.firebase/
+*.log

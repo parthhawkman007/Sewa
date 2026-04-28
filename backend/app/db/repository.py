@@ -70,7 +70,13 @@ class FirestoreRepository(BaseRepository):
         settings = get_settings()
         if not firebase_admin._apps:
             cred_path = settings.google_application_credentials
-            if cred_path and os.path.exists(cred_path):
+            cred_json = settings.google_application_credentials_json
+            if cred_json:
+                cred = credentials.Certificate(json.loads(cred_json))
+                firebase_admin.initialize_app(cred, {
+                    'projectId': settings.firebase_project_id,
+                })
+            elif cred_path and os.path.exists(cred_path):
                 cred = credentials.Certificate(cred_path)
                 firebase_admin.initialize_app(cred, {
                     'projectId': settings.firebase_project_id,
@@ -106,7 +112,7 @@ def get_repository() -> BaseRepository:
     settings = get_settings()
     # In a real app, you might decide which repo to use based on env vars
     # For now, if Firestore credentials exist, use Firestore, otherwise fallback to JSON
-    if settings.google_application_credentials and os.path.exists(settings.google_application_credentials):
+    if settings.google_application_credentials_json or (settings.google_application_credentials and os.path.exists(settings.google_application_credentials)):
         try:
             return FirestoreRepository()
         except Exception as e:

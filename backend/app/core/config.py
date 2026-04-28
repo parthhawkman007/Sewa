@@ -11,6 +11,7 @@ class Settings(BaseSettings):
 
     firebase_project_id: str | None = None
     google_application_credentials: str | None = None
+    google_application_credentials_json: str | None = None
     gemini_api_key: str | None = None
     gcs_bucket_name: str | None = None
 
